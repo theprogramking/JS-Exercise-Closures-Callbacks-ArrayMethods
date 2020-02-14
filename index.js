@@ -48,9 +48,13 @@ function processFirstItem(stringList, callback) {
  * [2] Invoking `processLength` passing `[]` and `(num) => "There are " + num`,
  * should return "There are 0".
 */
-function processLength(/* CODE HERE */) {
-  /* CODE HERE */
+function processLength(list, callback) {
+  list.forEach((i) => {
+    callback(i);
+  });
 }
+
+
 
 /**
  * ### Challenge `processLastItem`
@@ -66,9 +70,11 @@ function processLength(/* CODE HERE */) {
  * Invoking `processLastItem` passing `['foo', 'bar']` and `(str) => str + str`,
  * should return 'barbar'.
 */
-function processLastItem(/* CODE HERE */) {
-  /* CODE HERE */
+function processLastItem(stringList, callback) {
+  
 }
+
+
 
 /**
  * ### Challenge `processSum`
@@ -87,9 +93,13 @@ function processLastItem(/* CODE HERE */) {
  * [2] Invoking `processSum` passing `[]` and `(num) => num + 1000`,
  * should return 1000.
 */
-function processSum(/* CODE HERE */) {
-  /* CODE HERE */
+function processSum(numberList, callback) {
+ return numberList.reduce((num1, num2) => {
+    num1 + num2;
+  });
 }
+
+
 
 /**
  * ### Challenge `processProduct`
@@ -178,9 +188,15 @@ function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS
  * @returns an array with all the runners' full names in the following format: "Smith, John".
  * The full names appear in the array in the same order the runners appear in the `runners` array.
 */
-function getFullNames(/* CODE HERE */) {
-  /* CODE HERE */
+function getFullNames(runners) {
+  let fullNames = [];
+  runners.forEach((i) => {
+    fullNames.push(i.lastName + "," + i.firstName);
+  });
+  return fullNames;
 }
+
+
 
 /**
  * ### Challenge `firstNamesAllCaps`
@@ -194,8 +210,12 @@ function getFullNames(/* CODE HERE */) {
  * @returns an array with all the runners' first names in ALL CAPS.
  * The first names appear in the array in the same order the runners appear in the `runners` array.
 */
-function firstNamesAllCaps(/* CODE HERE */) {
-  /* CODE HERE */
+function firstNamesAllCaps(runners) {
+  let firstNames = [];
+  runners.forEach((i) => {
+    firstNames.push(runners[i].firstName.toUpperCase());
+  });
+  return firstNames;
 }
 
 /**
